@@ -1,0 +1,6 @@
+pymongo==4.5.0
+tkinter
+pillow==10.0.1
+pyinstaller==5.13.2
+pyperclip==1.8.2
+requests==2.31.0
