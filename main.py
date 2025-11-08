@@ -1,3 +1,4 @@
+
 import sys
 import os
 import traceback
@@ -9,18 +10,16 @@ def main():
     try:
         print(f"Starting {config.app_name} v{config.version}...")
         
-        
+        # Check if running as executable
         if getattr(sys, 'frozen', False):
-          
             base_path = sys._MEIPASS
         else:
-           
             base_path = os.path.dirname(os.path.abspath(__file__))
         
         print(f"Base path: {base_path}")
         print("Application initialized successfully")
         
-   
+        # Start the UI
         ui_manager.run()
         
     except Exception as e:
