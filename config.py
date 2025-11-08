@@ -10,22 +10,25 @@ class Config:
         self.assets_dir = Path("assets")
         self.config_file = self.data_dir / "config.json"
         
-    
+        # Create directories
         self.data_dir.mkdir(exist_ok=True)
         self.assets_dir.mkdir(exist_ok=True)
         
-       
+        # Default configuration
         self.default_config = {
-            "mongodb_uri": "mongodb+srv://risegroup:fkjUQXAfU0FMDCn4@cluster0.v7mkgh4.mongodb.net/?appName=Cluster0",
+            "mongodb_uri": "",
             "database_name": "thoughtlink",
             "sync_interval": 30,
             "max_clipboard_history": 100,
             "auto_start": False,
             "hotkey": "Ctrl+Shift+V",
-            "theme": "dark",
-            "clip_categories": ["General", "Code", "Links", "Images", "Documents"],
+            "theme": "light",
+            "clip_categories": ["All", "Code", "Chat", "Link", "Image", "Document"],
+            "context_boards": ["Global", "Coding Project X", "Client Y Chat", "Research Doc"],
             "device_id": "local_device",
-            "use_local_storage": True
+            "use_local_storage": True,
+            "blur_effect": True,
+            "rounded_corners": True
         }
         
         self.load_config()
@@ -57,5 +60,5 @@ class Config:
         self.default_config[key] = value
         self.save_config()
 
-
+# Global config instance
 config = Config()
